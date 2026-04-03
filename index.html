@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>رحلتنا 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>رحلتنا الصغيرة 🤍</h1>
+  <button onclick="startGame()">ابدأ الرحلة</button>
+
+  <div id="game" class="hidden">
+
+    <div id="questionBox">
+      <p id="question"></p>
+      <div id="answers"></div>
+    </div>
+
+    <div id="responseBox" class="hidden">
+      <p id="response"></p>
+      <button onclick="nextQuestion()">نكمل الرحلة</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
