@@ -6,67 +6,79 @@
   <title>رحلتنا الصغيرة 🤍</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="page" id="app">
     <div class="overlay"></div>
 
     <main class="main-content">
+
+      <!-- HERO -->
       <section class="hero" id="heroSection">
-        <p class="intro-text">قبل ما نبدأ رحلتنا… خلّي موسيقانا تمشي معنا 🤍</p>
-        <h1>رحلتنا الصغيرة</h1>
+        <p class="intro-text">قبل ما نبدأ رحلتنا… خلي موسيقتنا تمشي معنا 🤍</p>
+        <h1>رحلتنا الصغيرة 🤍</h1>
 
         <div class="hero-car-wrap">
-          <img src="couple-car.png" alt="رحلتنا" class="hero-car" id="carImage" />
+          <img src="couple-car.PNG" class="hero-car" />
         </div>
 
         <button class="main-btn" onclick="startWithMusic()">
-          ابدأ الرحلة مع موسيقانا 🎵
+          🎵 ابدأ الرحلة مع موسيقانا
         </button>
       </section>
 
+      <!-- MAP -->
       <section class="map-section hidden" id="mapSection">
+
         <div class="top-bar">
-          <button class="music-btn" onclick="playSong()">تشغيل موسيقانا 🎵</button>
+          <button class="music-btn" onclick="playSong()">🎵 تشغيل موسيقتنا</button>
         </div>
 
         <div class="map-wrap">
-          <img src="map.png" alt="الخريطة" class="map-image" />
-
-          <img src="couple-car.png" alt="السيارة" class="map-car" id="mapCar" />
+          <img src="map.PNG" class="map-image" />
+          <img src="couple-car.PNG" class="map-car pos0" id="mapCar" />
 
           <button class="stop stop1 active" onclick="openQuestion(0)">1</button>
           <button class="stop stop2 locked" onclick="openQuestion(1)">2</button>
           <button class="stop stop3 locked" onclick="openQuestion(2)">3</button>
           <button class="stop stop4 locked" onclick="openQuestion(3)">4</button>
-          <button class="stop final-stop locked" onclick="showFinalMessage()">❤</button>
+          <button class="stop final-stop locked" onclick="showFinalMessage()">❤️</button>
         </div>
+
       </section>
+
     </main>
 
+    <!-- POPUP -->
     <div class="popup-backdrop hidden" id="popupBackdrop">
-      <div class="popup-card" id="popupCard">
-        <img src="note-bg.png" alt="رسالة" class="note-bg" />
+      <div class="popup-card">
+
+        <img src="note-bg.PNG" class="note-bg" />
 
         <div class="popup-content" id="popupContent">
+
           <div id="questionView">
-            <p class="popup-question" id="popupQuestion"></p>
-            <div class="answers" id="popupAnswers"></div>
+            <p id="popupQuestion"></p>
+            <div id="popupAnswers"></div>
           </div>
 
           <div id="responseView" class="hidden">
-            <p class="popup-response" id="popupResponse"></p>
-            <button class="continue-btn" onclick="continueJourney()">نكمل الرحلة ✨</button>
+            <p id="popupResponse"></p>
+            <button onclick="continueJourney()">نكمل الرحلة ✨</button>
           </div>
 
           <div id="finalView" class="hidden">
-            <p class="final-message" id="finalMessage"></p>
-            <button class="close-btn" onclick="closePopup()">سكرنا الرسالة 🤍</button>
+            <p id="finalMessage"></p>
+            <button onclick="closePopup()">سكرنا الرسالة 🤍</button>
           </div>
+
         </div>
 
         <button class="close-x" onclick="closePopup()">×</button>
+
       </div>
     </div>
+
   </div>
 
   <script src="script.js"></script>
