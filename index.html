@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>رحلتنا 🤍</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رحلتنا الصغيرة 🤍</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="page" id="app">
+    <div class="overlay"></div>
 
-<div class="container">
-  <h1>رحلتنا الصغيرة 🤍</h1>
-  <button onclick="startGame()">ابدأ الرحلة</button>
+    <main class="main-content">
+      <section class="hero" id="heroSection">
+        <p class="intro-text">قبل ما نبدأ رحلتنا… خلّي موسيقانا تمشي معنا 🤍</p>
+        <h1>رحلتنا الصغيرة</h1>
 
-  <div id="game" class="hidden">
+        <div class="hero-car-wrap">
+          <img src="couple-car.png" alt="رحلتنا" class="hero-car" id="carImage" />
+        </div>
 
-    <div id="questionBox">
-      <p id="question"></p>
-      <div id="answers"></div>
+        <button class="main-btn" onclick="startWithMusic()">
+          ابدأ الرحلة مع موسيقانا 🎵
+        </button>
+      </section>
+
+      <section class="map-section hidden" id="mapSection">
+        <div class="top-bar">
+          <button class="music-btn" onclick="playSong()">تشغيل موسيقانا 🎵</button>
+        </div>
+
+        <div class="map-wrap">
+          <img src="map.png" alt="الخريطة" class="map-image" />
+
+          <img src="couple-car.png" alt="السيارة" class="map-car" id="mapCar" />
+
+          <button class="stop stop1 active" onclick="openQuestion(0)">1</button>
+          <button class="stop stop2 locked" onclick="openQuestion(1)">2</button>
+          <button class="stop stop3 locked" onclick="openQuestion(2)">3</button>
+          <button class="stop stop4 locked" onclick="openQuestion(3)">4</button>
+          <button class="stop final-stop locked" onclick="showFinalMessage()">❤</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="popup-backdrop hidden" id="popupBackdrop">
+      <div class="popup-card" id="popupCard">
+        <img src="note-bg.png" alt="رسالة" class="note-bg" />
+
+        <div class="popup-content" id="popupContent">
+          <div id="questionView">
+            <p class="popup-question" id="popupQuestion"></p>
+            <div class="answers" id="popupAnswers"></div>
+          </div>
+
+          <div id="responseView" class="hidden">
+            <p class="popup-response" id="popupResponse"></p>
+            <button class="continue-btn" onclick="continueJourney()">نكمل الرحلة ✨</button>
+          </div>
+
+          <div id="finalView" class="hidden">
+            <p class="final-message" id="finalMessage"></p>
+            <button class="close-btn" onclick="closePopup()">سكرنا الرسالة 🤍</button>
+          </div>
+        </div>
+
+        <button class="close-x" onclick="closePopup()">×</button>
+      </div>
     </div>
-
-    <div id="responseBox" class="hidden">
-      <p id="response"></p>
-      <button onclick="nextQuestion()">نكمل الرحلة</button>
-    </div>
-
   </div>
-</div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
